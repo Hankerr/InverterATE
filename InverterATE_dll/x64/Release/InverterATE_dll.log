@@ -1,5 +1,7 @@
-﻿  IInstrument.cpp
+﻿  CInstrument.cpp
+  Imp_PW8001.cpp
   正在生成代码
-  Incremental LTCG not supported for -Od component, build without incremental LTCG.
+  Previous IPDB not found, fall back to full compilation.
+  All 13 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
-  InverterATE_dll.vcxproj -> C:\Users\Administrator\Desktop\InverterATE_dll\x64\Release\InverterATE_dll.dll
+  InverterATE_dll.vcxproj -> C:\Users\Administrator\Desktop\InverterATE\InverterATE_dll\x64\Release\InverterATE_dll.dll

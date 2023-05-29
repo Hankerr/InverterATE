@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CInstrument.h" />
     <ClInclude Include="IInstrument.h" />
+    <ClInclude Include="Imp_PW8001.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IInstrument.cpp" />
+    <ClCompile Include="CInstrument.cpp" />
+    <ClCompile Include="Imp_PW8001.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -136,6 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>log4cplus/include/;NI/Include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

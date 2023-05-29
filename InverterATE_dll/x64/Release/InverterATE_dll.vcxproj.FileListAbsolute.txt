@@ -1,1 +1,2 @@
 C:\Users\Administrator\Desktop\InverterATE_dll\x64\Release\InverterATE_dll.dll
+C:\Users\Administrator\Desktop\InverterATE\InverterATE_dll\x64\Release\InverterATE_dll.dll

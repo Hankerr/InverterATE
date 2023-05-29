@@ -18,9 +18,18 @@
     <ClInclude Include="IInstrument.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CInstrument.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Imp_PW8001.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IInstrument.cpp">
+    <ClCompile Include="CInstrument.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Imp_PW8001.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

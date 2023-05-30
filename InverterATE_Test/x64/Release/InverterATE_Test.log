@@ -1,3 +1,7 @@
 ﻿  main.cpp
-main.obj : error LNK2001: 无法解析的外部符号 "public: __cdecl Imp_PW8001::Imp_PW8001(void)" (??0Imp_PW8001@@QEAA@XZ)
-C:\Users\Administrator\Desktop\InverterATE\InverterATE_dll\x64\Release\InverterATE_Test.exe : fatal error LNK1120: 1 个无法解析的外部命令
+  正在生成代码
+  1 of 98 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  InverterATE_Test.vcxproj -> C:\Users\Administrator\Desktop\InverterATE\InverterATE_dll\x64\Release\InverterATE_Test.exe

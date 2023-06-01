@@ -1,43 +1,54 @@
 #include <iostream>
+#include <ctime>
+#include <iomanip>
 
 #include <windows.h>
 
-#include "../InverterATE_dll/IInstrument.h"
-#include "../InverterATE_dll/Imp_PW8001.h"
+//#include "../InverterATE_dll/IInstrument.h"
+//#include "../InverterATE_dll/Imp_PW8001.h"
 
 #include <log4cplus/logger.h>
-#include "log4cplus/consoleappender.h"
-#include <log4cplus/loggingmacros.h>
 #include <log4cplus/configurator.h>
+#include <log4cplus/loglevel.h>
+#include <log4cplus/loggingmacros.h>
 #include <log4cplus/initializer.h>
-
+#include <log4cplus/fileappender.h>
 
 using namespace log4cplus;
 using namespace log4cplus::helpers;
 
 using namespace std;
 
+static Logger g_DebugLogger = Logger::getInstance("log");
+
+void printMsg(string fBsn, string msg) {
+    static Initializer initializer;
+
+    time_t now = time(NULL);
+    tm* ptrTm_t = localtime(&now);
+    stringstream ssNowTimeStream;
+    ssNowTimeStream.clear();
+    ssNowTimeStream << setw(2) << left << ptrTm_t->tm_hour << setw(2) << left << ptrTm_t->tm_min << setw(2) << left << ptrTm_t->tm_sec;
+    string logPath = "./log/" + fBsn + "_" + ssNowTimeStream.str() + "_DEBUG.log";
+
+    SharedAppenderPtr _append(new FileAppender(logPath, std::ios_base::ate, true, true));
+    _append->setName("file_log_test");
+
+    std::string pattern = "%D{%Y-%m-%d %H:%M:%S} %m%n";
+    _append->setLayout(std::auto_ptr<Layout>(new PatternLayout(pattern)));
+
+    g_DebugLogger.addAppender(_append);
+
+    LOG4CPLUS_DEBUG(g_DebugLogger,msg);
+}
+
 int main() {
-    PropertyConfigurator::doConfigure(LOG4CPLUS_TEXT("log.properties"));
-    Logger logger = log4cplus::Logger::getRoot();
-
-    LOG4CPLUS_INFO(logger, LOG4CPLUS_TEXT("LOG4CPLUS_INFO1"));
-    cout << "INFO1" << endl;
-    Sleep(12000);
-    LOG4CPLUS_INFO(logger, LOG4CPLUS_TEXT("LOG4CPLUS_INFO2"));
-
-    LOG4CPLUS_ERROR(logger, LOG4CPLUS_TEXT("LOG4CPLUS_ERROR1"));
-
-    cout << "ERROR1" << endl;
-    Sleep(12000);
-    LOG4CPLUS_ERROR(logger, LOG4CPLUS_TEXT("LOG4CPLUS_ERROR2"));
-
-
-    cout << "Finish" << endl;
-
-    // 输出到控制台
-    //log4cplus::Logger loggerConsole = log4cplus::Logger::getInstance(LOG4CPLUS_TEXT("console"));
-    //LOG4CPLUS_INFO(loggerConsole, LOG4CPLUS_TEXT("console output..."));
+    string bsn = "1111111111111";
+    /*log activity*/
+    for (int i = 0; i < 5; ++i) {
+        printMsg(bsn, "Enteringloop#");
+    }
+    
 
     system("pause");
 }

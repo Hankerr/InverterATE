@@ -20,6 +20,7 @@ if (app.requestSingleInstanceLock()) { // 判断是否自由一个实例
         })
     })
 } else { // 关闭当前新创建的实例
+
     app.quit()
 }
 
@@ -27,13 +28,15 @@ if (app.requestSingleInstanceLock()) { // 判断是否自由一个实例
 const iconPath = path.join(__dirname, './src/img/icon.png')
 
 app.on('ready', () => {
-
     mainWindow = new BrowserWindow({
-        frame: false,
-        resizable: false,
         width: 800,
         height: 600,
+        titleBarStyle: "hidden",
         icon: iconPath,
+        titleBarOverlay: {
+            color: "#ececec",
+            symbolColor: "black",
+        },
         webPreferences: {
             backgroundThrottling: false,
             nodeIntegration: true,

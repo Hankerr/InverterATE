@@ -4,7 +4,7 @@
   "description": "ATE for test inverter",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch index.js --exec electron .",
+    "start": "nodemon --watch index.js main.html --exec electron .",
     "packager": "electron-packager . InverterATE_UI --overwrite --win=x32 --out  ./out --arch=x64 --app-version=1.0.0 --electron-version=5.1.0"
   },
   "author": "Hank",

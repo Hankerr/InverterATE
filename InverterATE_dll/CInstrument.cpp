@@ -1,11 +1,11 @@
 #include "CInstrument.h"
 
-ViStatus CInstrument::IInstrumentOpen()
+ViStatus CInstr::IInstrOpen()
 {
     return ViStatus();
 }
 
-ViStatus CInstrument::IInstrumentClose()
+ViStatus CInstr::IInstrClose()
 {
     return ViStatus();
 }

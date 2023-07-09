@@ -9,11 +9,8 @@
 
 using namespace std;
 
-class IInstrument
+class IInstr
 {
-public:
-    virtual ViStatus IInstrumentOpen() = 0;
-    virtual ViStatus IInstrumentClose() = 0;
-    virtual string InquireVolt();
+
 };
 

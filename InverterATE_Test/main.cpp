@@ -4,7 +4,8 @@
 
 #include <windows.h>
 
-//#include "../InverterATE_dll/IInstrument.h"
+
+#include "../InverterATE_dll/IInstrument.h"
 //#include "../InverterATE_dll/Imp_PW8001.h"
 
 #include <log4cplus/logger.h>
@@ -39,16 +40,18 @@ void printMsg(string fBsn, string msg) {
 
     g_DebugLogger.addAppender(_append);
 
-    LOG4CPLUS_DEBUG(g_DebugLogger,msg);
+    LOG4CPLUS_DEBUG(g_DebugLogger, msg);
 }
 
 int main() {
-    string bsn = "1111111111111";
-    /*log activity*/
-    for (int i = 0; i < 5; ++i) {
-        printMsg(bsn, "Enteringloop#");
-    }
-    
+    //string bsn = "1111111111111";
+    ///*log activity*/
+    //for (int i = 0; i < 5; ++i) {
+    //    printMsg(bsn, "Enteringloop#");
+    //}
+
+
+    auto pIns = IInstrManager::GetInstance();
 
     system("pause");
 }

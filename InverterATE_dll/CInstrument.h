@@ -1,12 +1,12 @@
 #pragma once
 #include "IInstrument.h"
 
-class CInstrument :
-    public IInstrument
+class CInstr :
+    public IInstr
 {
 public:
-    virtual ViStatus IInstrumentOpen();
-    virtual ViStatus IInstrumentClose();
+    virtual ViStatus IInstrOpen();
+    virtual ViStatus IInstrClose();
     virtual string InquireVolt();
 };
 
